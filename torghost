@@ -161,8 +161,8 @@ def stop_torghost():
     os.system("service tor stop")
     print bcolors.GREEN+"[done]"+bcolors.ENDC    
     
-    print t()+" Restarting Network manager...",
-    os.system("service networking restart")
+    print t()+" Restarting Network manager (netplan apply)...",
+    os.system("netplan apply")
     print bcolors.GREEN+"[done]"+bcolors.ENDC
     
     print t()+" Reverting back resolv.conf...",
